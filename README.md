@@ -16,6 +16,16 @@ It is possible to reach the answers of the projects in this repo or any other re
 Öğretmen veya sınıf gibi kavramların bulunmadığı ücretsiz bir programlama okulu. Burada öğrenciler birbirlerinden bir şeyler öğreniyor. Eğer bir şeyi bilmiyorsanız sizin gibi havuz öğrencisi olan herhangi birisine soru sorabilirsiniz. Eğer sorduğunuz kişi bilmiyorsa o zaman bir başkasına sormayı deneyin, çünkü öğrenmenizin başka bir yolu yok.
 Bu repoda veya başka bir repoda projelerin cevaplarına ulaşmak mümkün, ancak şunu unutmayın; herkesi kandırabilirsiniz kendinizi asla. O yüzden 42 okullarında diğer öğrencilerle yarışmak veya direkt cevaplara bakmak yerine bir şeyler öğrenmeye çalışmanız uzun vadede sizin yararınıza olacaktır.
 
+## Stats - İstatistikler
+
+-Level / Seviye: 6, %92
+
+-Online Hours / Online Saatler: +200 hours / saat
+
+-Projects Pushed / Pushlanan Projeler: Until C06 except Shell01 / Shell01 hariç C06'ya kadar.
+
+-Exams / Sınavlar: 80, 46, 70, The last exam could not be held due to a system failure. / Son sınav sistemsel arıza yüzünden yapılamadı.
+
 ## Got questions ? Do reach - Soruların mı var ? Ulaş
 
 [E-mail](mailto:karakuscemenes@gmail.com)
