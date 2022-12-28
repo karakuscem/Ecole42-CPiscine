@@ -5,39 +5,48 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckarakus <ckarakus@student.42istanbul.com  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/21 02:00:29 by ckarakus          #+#    #+#             */
-/*   Updated: 2022/11/21 02:00:40 by ckarakus         ###   ########.fr       */
+/*   Created: 2022/10/23 13:05:14 by ckarakus          #+#    #+#             */
+/*   Updated: 2022/10/23 20:04:21 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlen(char *str)
-{
-	unsigned int counter;
+#include <unistd.h>
 
-	counter = 0;
-	while (*str != '\0')
+int	ft_strlen(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
 	{
-		counter++;
-		str++;
+		i++;
 	}
-	return (counter);
+	return (i);
 }
 
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
-	unsigned int c;
-	unsigned int d;
+	unsigned int	i;
+	unsigned int	j;
+	unsigned int	dlen;
+	unsigned int	slen;
 
-	if (size <= ft_strlen(dest))
-		return (size + ft_strlen(src));
-	c = ft_strlen(dest);
-	d = 0;
-	while (src[d] != '\0' && c + 1 < size)
+	i = 0;
+	j = 0;
+	while (dest[j] != '\0')
 	{
-		dest[c] = src[d];
-		c++;
-		d++;
+		j++;
 	}
-	dest[c] = '\0';
-	return (ft_strlen(dest) + ft_strlen(&src[d]));
+	dlen = j;
+	slen = ft_strlen(src);
+	if (size == 0 || size <= dlen)
+		return (slen + size);
+	while (src [i] != '\0' && i < size - dlen - 1)
+	{
+		dest[j] = src[i];
+		i++;
+		j++;
+	}
+	dest[j] = '\0';
+	return (dlen + slen);
 }

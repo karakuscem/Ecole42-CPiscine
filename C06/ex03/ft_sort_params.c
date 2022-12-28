@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckarakus <ckarakus@student.42istanbul.com  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/21 02:11:16 by ckarakus          #+#    #+#             */
-/*   Updated: 2022/11/21 02:11:17 by ckarakus         ###   ########.fr       */
+/*   Created: 2022/10/30 22:47:46 by ckarakus          #+#    #+#             */
+/*   Updated: 2022/10/30 22:48:09 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,60 +14,67 @@
 
 void	ft_putchar(char c)
 {
-	write(1, &c, 1);
+	write (1, &c, 1);
 }
 
 void	ft_putstr(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	while (str[i])
-		i++;
-	write(1, str, i);
+	while (str[i] != '\0')
+		ft_putchar(str[i++]);
 }
 
-void	ft_print_arr(char **arr)
+int	ft_strcmp(char *s1, char *s2)
 {
-	while (*arr)
+	int	i;
+
+	i = 0;
+	while (s1[i] != '\0' || s2[i] != '\0')
 	{
-		ft_putstr(*arr++);
-		ft_putchar('\n');
+		if (s1[i] == s2[i])
+			i++;
+		if (s1[i] < s2[i] || s1[i] > s2[i])
+			return (s1[i] - s2[i]);
 	}
+	return (0);
 }
 
-static int	ft_strcmp(char *s1, char *s2)
+void	ft_swap(char **a, char **b)
 {
-	while (*s1 && (*s1 == *s2))
-	{
-		s1 += 1;
-		s2 += 1;
-	}
-	return (*(unsigned char *)s1 - *(unsigned char *)s2);
-}
-
-int			main(int argc, char *argv[])
-{
-	int		find;
-	int		i;
 	char	*tmp;
 
-	find = 1;
-	while (find)
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
+}
+
+int	main(int argc, char **argv)
+{
+	int		j;
+	int		x;
+
+	x = 1;
+	while (x < argc - 1)
 	{
-		find = 0;
-		i = 0;
-		while (++i < argc - 1)
+		j = 1;
+		while (j < argc - 1)
 		{
-			if (ft_strcmp(argv[i], argv[i + 1]) > 0)
+			if (ft_strcmp(argv[j], argv[j + 1]) > 0)
 			{
-				tmp = argv[i];
-				argv[i] = argv[i + 1];
-				argv[i + 1] = tmp;
-				find = 1;
+				ft_swap(&argv[j], &argv[j + 1]);
 			}
+			j++;
 		}
+		x++;
 	}
-	ft_print_arr(argv + 1);
+	j = 1;
+	while (j < argc)
+	{
+		ft_putstr(argv[j]);
+		ft_putchar('\n');
+		j++;
+	}
 	return (0);
 }

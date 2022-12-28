@@ -5,25 +5,26 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckarakus <ckarakus@student.42istanbul.com  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/21 02:12:25 by ckarakus          #+#    #+#             */
-/*   Updated: 2022/11/21 02:12:46 by ckarakus         ###   ########.fr       */
+/*   Created: 2022/10/14 00:36:22 by ckarakus          #+#    #+#             */
+/*   Updated: 2022/10/14 00:36:24 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void write_num(char a, char b, char c)
+void	ft_putchar(char c)
 {
-	write(1, &a, 1);
-	write(1, &b, 1);
 	write(1, &c, 1);
-	if (a != '7' || b != '8' || c != '9')
-	{
-		write(1, ", ", 2);
-	}
 }
 
-void ft_print_comb(void)
+void	write_numbers(char a, char b, char c)
+{
+	ft_putchar(a);
+	ft_putchar(b);
+	ft_putchar(c);
+}
+
+void	ft_print_comb(void)
 {
 	char	first;
 	char	second;
@@ -38,7 +39,12 @@ void ft_print_comb(void)
 			third = second + 1;
 			while (third <= '9')
 			{
-				write_num(first, second, third);
+				write_numbers(first, second, third);
+				if (!(first == '7' && second == '8' && third == '9'))
+				{
+					ft_putchar(',');
+					ft_putchar(' ');
+				}
 				third++;
 			}
 			second++;

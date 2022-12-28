@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckarakus <ckarakus@student.42istanbul.com  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/21 02:04:54 by ckarakus          #+#    #+#             */
-/*   Updated: 2022/11/21 02:04:56 by ckarakus         ###   ########.fr       */
+/*   Created: 2022/10/26 23:10:15 by ckarakus          #+#    #+#             */
+/*   Updated: 2022/10/26 23:15:45 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,4 +21,3 @@ int	ft_fibonacci(int index)
 	else
 		return (ft_fibonacci(index - 1) + ft_fibonacci(index - 2));
 }
-

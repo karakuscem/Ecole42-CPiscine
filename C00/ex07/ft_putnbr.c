@@ -5,37 +5,38 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckarakus <ckarakus@student.42istanbul.com  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/21 01:30:55 by ckarakus          #+#    #+#             */
-/*   Updated: 2022/11/21 01:30:56 by ckarakus         ###   ########.fr       */
+/*   Created: 2022/10/14 00:36:52 by ckarakus          #+#    #+#             */
+/*   Updated: 2022/10/14 00:36:53 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void ft_putchar(char a)
+void	ft_putchar(char c)
 {
-	write(1, &a, 1);
+	write(1, &c, 1);
 }
 
-void ft_putnbr(int nb)
+void	ft_putnbr(int nb)
 {
 	if (nb == -2147483648)
 	{
 		ft_putchar('-');
 		ft_putchar('2');
-		nb = 147483648;
+		ft_putnbr(147483648);
 	}
-	if (nb < 0)
+	else if (nb < 0)
 	{
+		nb = -nb;
 		ft_putchar('-');
-		nb *= -1;
 	}
-	if (nb < 10)
+	else if (nb >= 0 && nb <= 9)
 	{
-		ft_putchar(nb + 48);
-		return;
+		ft_putchar(nb + '0');
 	}
 	else
+	{
 		ft_putnbr(nb / 10);
-	ft_putnbr(nb % 10);
+		ft_putnbr(nb % 10);
+	}
 }

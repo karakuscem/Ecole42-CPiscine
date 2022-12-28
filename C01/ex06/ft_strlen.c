@@ -5,19 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckarakus <ckarakus@student.42istanbul.com  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/21 01:33:07 by ckarakus          #+#    #+#             */
-/*   Updated: 2022/11/21 01:33:11 by ckarakus         ###   ########.fr       */
+/*   Created: 2022/10/14 05:37:29 by ckarakus          #+#    #+#             */
+/*   Updated: 2022/10/14 05:37:30 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strlen(char *str)
-{
-	int c;
+#include <unistd.h>
 
-	c = 0;
-	while (str[c] != '\0')
-	{
-		c++;
-	}
-	return (c);
+int	ft_strlen(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
 }

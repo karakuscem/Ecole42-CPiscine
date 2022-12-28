@@ -5,20 +5,36 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckarakus <ckarakus@student.42istanbul.com  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/21 02:05:40 by ckarakus          #+#    #+#             */
-/*   Updated: 2022/11/21 02:07:27 by ckarakus         ###   ########.fr       */
+/*   Created: 2022/10/26 23:18:55 by ckarakus          #+#    #+#             */
+/*   Updated: 2022/10/28 15:29:45 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_sqrt(int nb)
+int	ft_sqrt(int nb)
 {
-	long	i;
+	long	index;
+	long	b;
 
-	i = 0;
-	while (i * i < nb)
-		i++;
-	if (i * i == nb)
-		return (i);
-	else
+	b = nb;
+	if (b <= 0)
+	{
 		return (0);
+	}
+	if (b == 1)
+	{
+		return (1);
+	}
+	index = 2;
+	if (b >= 2)
+	{
+		while (index * index <= b)
+		{
+			if (index * index == b)
+			{
+				return (index);
+			}
+			index++;
+		}
+	}
+	return (0);
 }

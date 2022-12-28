@@ -5,26 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckarakus <ckarakus@student.42istanbul.com  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/21 02:09:16 by ckarakus          #+#    #+#             */
-/*   Updated: 2022/11/21 02:09:17 by ckarakus         ###   ########.fr       */
+/*   Created: 2022/10/26 16:08:41 by ckarakus          #+#    #+#             */
+/*   Updated: 2022/10/31 00:10:07 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int		main(int argc, char **argv)
+void	ft_putchar(char c)
 {
-	int c;
+	write(1, &c, 1);
+}
 
-	c = 0;
-	if (argc > 0)
+int	main(int argc, char *argv[])
+{
+	int	i;
+
+	i = 0;
+	while (argv[0][i] && argc)
 	{
-		while (argv[0][c] != '\0')
-		{
-			write(1, &argv[0][c], 1);
-			c++;
-		}
-		write(1, "\n", 1);
+		ft_putchar(argv[0][i]);
+		i++;
 	}
-	return (0);
+	ft_putchar('\n');
 }

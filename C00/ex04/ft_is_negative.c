@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckarakus <ckarakus@student.42istanbul.com  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/21 01:24:17 by ckarakus          #+#    #+#             */
-/*   Updated: 2022/11/21 01:24:46 by ckarakus         ###   ########.fr       */
+/*   Created: 2022/10/14 00:36:09 by ckarakus          #+#    #+#             */
+/*   Updated: 2022/10/14 00:36:10 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 void	ft_is_negative(int n)
 {
-	char x;
-	char y;
+	char	x;
+	char	y;
 
-	x = 'P';
-	y = 'N';
-	if (n >= 0)
+	x = 'N';
+	y = 'P';
+	if (n < 0)
 	{
 		write(1, &x, 1);
 	}

@@ -5,25 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckarakus <ckarakus@student.42istanbul.com  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/21 02:00:14 by ckarakus          #+#    #+#             */
-/*   Updated: 2022/11/21 02:00:15 by ckarakus         ###   ########.fr       */
+/*   Created: 2022/10/22 00:32:28 by ckarakus          #+#    #+#             */
+/*   Updated: 2022/10/23 22:13:39 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
+
 char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
-	unsigned int c;
-	unsigned int d;
+	unsigned int	i;
+	unsigned int	dest_size;
 
-	c = 0;
-	d = 0;
-	while (dest[c] != '\0')
-		c++;
-	while (src[d] != '\0' && d < nb)
+	i = 0;
+	dest_size = 0;
+	while (dest[dest_size] != '\0')
+		dest_size++;
+	while (i < nb && src[i] != '\0')
 	{
-		dest[c + d] = src[d];
-		d++;
+		dest[i + dest_size] = src[i];
+		i++;
 	}
-	dest[c + d] = '\0';
+	dest[i + dest_size] = '\0';
 	return (dest);
 }

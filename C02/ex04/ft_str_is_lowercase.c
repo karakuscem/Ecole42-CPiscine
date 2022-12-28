@@ -5,21 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckarakus <ckarakus@student.42istanbul.com  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/21 01:56:11 by ckarakus          #+#    #+#             */
-/*   Updated: 2022/11/21 01:56:12 by ckarakus         ###   ########.fr       */
+/*   Created: 2022/10/19 07:45:00 by ckarakus          #+#    #+#             */
+/*   Updated: 2022/10/19 07:45:05 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_str_is_lowercase(char *str)
-{
-	int c;
+#include <unistd.h>
 
-	c = 0;
-	while (str[c] != '\0')
+int	ft_str_is_lowercase(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
 	{
-		if ((str[c] < 'a') || (str[c] > 'z'))
+		if (!(str[i] >= 'a' && str[i] <= 'z'))
 			return (0);
-		c++;
+		i++;
 	}
 	return (1);
 }

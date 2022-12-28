@@ -5,21 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckarakus <ckarakus@student.42istanbul.com  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/21 02:03:46 by ckarakus          #+#    #+#             */
-/*   Updated: 2022/11/21 02:03:48 by ckarakus         ###   ########.fr       */
+/*   Created: 2022/10/25 03:04:21 by ckarakus          #+#    #+#             */
+/*   Updated: 2022/10/25 03:21:27 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_iterative_factorial(int nb)
+int	ft_iterative_factorial(int nb)
 {
-	int res;
+	int	res;
 
 	res = 1;
 	if (nb < 0)
 		return (0);
-	else if (nb <= 1)
-		return (1);
 	while (nb > 0)
-		res *= nb--;
+	{
+		res *= nb;
+		nb--;
+	}
 	return (res);
 }

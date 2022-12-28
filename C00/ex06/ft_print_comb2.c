@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckarakus <ckarakus@student.42istanbul.com  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/21 01:28:02 by ckarakus          #+#    #+#             */
-/*   Updated: 2022/11/21 01:29:22 by ckarakus         ###   ########.fr       */
+/*   Created: 2022/10/14 00:36:38 by ckarakus          #+#    #+#             */
+/*   Updated: 2022/10/14 00:36:39 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,22 +19,21 @@ void	ft_putchar(char c)
 
 void	ft_print_comb2(void)
 {
-	int		first;
-	int		second;
+	int	first;
+	int	second;
 
 	first = 0;
-	second = 0;
-	while (first < 100)
+	while (first <= 98)
 	{
 		second = first + 1;
-		while (second < 100)
+		while (second <= 99)
 		{
 			ft_putchar(first / 10 + '0');
 			ft_putchar(first % 10 + '0');
 			ft_putchar(' ');
 			ft_putchar(second / 10 + '0');
 			ft_putchar(second % 10 + '0');
-			if ((first / 10 != 9) || (first % 10 != 8))
+			if (!(first == 98 && second == 99))
 			{
 				ft_putchar(',');
 				ft_putchar(' ');

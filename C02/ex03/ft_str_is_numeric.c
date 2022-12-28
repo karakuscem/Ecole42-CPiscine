@@ -5,21 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckarakus <ckarakus@student.42istanbul.com  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/21 01:56:03 by ckarakus          #+#    #+#             */
-/*   Updated: 2022/11/21 01:56:05 by ckarakus         ###   ########.fr       */
+/*   Created: 2022/10/19 07:41:11 by ckarakus          #+#    #+#             */
+/*   Updated: 2022/10/19 07:43:04 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_str_is_numeric(char *str)
-{
-	int c;
+#include <unistd.h>
 
-	c = 0;
-	while (str[c] != '\0')
+int	ft_str_is_numeric(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
 	{
-		if ((str[c] < '0') || (str[c] > '9'))
+		if (!(str[i] >= '0' && str[i] <= '9'))
 			return (0);
-		c++;
+		i++;
 	}
 	return (1);
 }

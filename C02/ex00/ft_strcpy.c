@@ -5,21 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckarakus <ckarakus@student.42istanbul.com  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/21 01:55:17 by ckarakus          #+#    #+#             */
-/*   Updated: 2022/11/21 01:55:21 by ckarakus         ###   ########.fr       */
+/*   Created: 2022/10/19 07:22:07 by ckarakus          #+#    #+#             */
+/*   Updated: 2022/10/19 18:37:21 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
+
 char	*ft_strcpy(char *dest, char *src)
 {
-	int c;
+	int	i;
 
-	c = 0;
-	while (src[c] != '\0')
+	i = 0;
+	while (src[i])
 	{
-		dest[c] = src[c];
-		c++;
+		dest[i] = src[i];
+		i++;
 	}
-	dest[c] = '\0';
+	dest[i] = '\0';
 	return (dest);
 }

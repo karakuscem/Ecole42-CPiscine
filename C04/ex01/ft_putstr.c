@@ -5,23 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckarakus <ckarakus@student.42istanbul.com  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/21 02:02:15 by ckarakus          #+#    #+#             */
-/*   Updated: 2022/11/21 02:02:16 by ckarakus         ###   ########.fr       */
+/*   Created: 2022/10/24 02:43:21 by ckarakus          #+#    #+#             */
+/*   Updated: 2022/10/24 02:43:22 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
-
 void	ft_putstr(char *str)
 {
-	while (*str != '\0')
+	int	i;
+
+	i = 0;
+	while (str[i])
 	{
-		ft_putchar(*str);
-		str++;
+		write(1, &str[i], 1);
+		i++;
 	}
 }

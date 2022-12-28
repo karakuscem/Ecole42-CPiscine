@@ -5,26 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckarakus <ckarakus@student.42istanbul.com  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/21 01:23:05 by ckarakus          #+#    #+#             */
-/*   Updated: 2022/11/21 01:23:06 by ckarakus         ###   ########.fr       */
+/*   Created: 2022/10/14 00:35:32 by ckarakus          #+#    #+#             */
+/*   Updated: 2022/10/14 00:35:33 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
-
 void	ft_print_alphabet(void)
 {
-	char alphabet;
+	char	i;
 
-	alphabet = 'a';
-	while (alphabet <= 'z')
+	i = 'a';
+	while (i <= 'z' && i >= 'a')
 	{
-		ft_putchar(alphabet);
-		alphabet++;
+		write(1, &i, 1);
+		i++;
 	}
 }

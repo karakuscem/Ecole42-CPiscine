@@ -5,21 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckarakus <ckarakus@student.42istanbul.com  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/21 01:56:27 by ckarakus          #+#    #+#             */
-/*   Updated: 2022/11/21 01:56:29 by ckarakus         ###   ########.fr       */
+/*   Created: 2022/10/19 08:10:43 by ckarakus          #+#    #+#             */
+/*   Updated: 2022/10/19 08:10:44 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_str_is_printable(char *str)
-{
-	int c;
+#include <unistd.h>
 
-	c = 0;
-	while (str[c] != '\0')
+int	ft_str_is_printable(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
 	{
-		if ((str[c] < 32) || (str[c] > 126))
+		if (!(str[i] >= 32) && (str[i] <= 126))
 			return (0);
-		c++;
+		i++;
 	}
 	return (1);
 }

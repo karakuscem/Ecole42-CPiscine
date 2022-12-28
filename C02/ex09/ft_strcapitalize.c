@@ -5,33 +5,42 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckarakus <ckarakus@student.42istanbul.com  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/21 01:56:52 by ckarakus          #+#    #+#             */
-/*   Updated: 2022/11/21 01:56:54 by ckarakus         ###   ########.fr       */
+/*   Created: 2022/10/19 10:46:49 by ckarakus          #+#    #+#             */
+/*   Updated: 2022/10/20 00:01:23 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
+
+int	is_alpha(char c)
+{
+	if ((c >= 'a') && (c <= 'z'))
+		return (1);
+	if ((c >= 'A') && (c <= 'Z'))
+		return (1);
+	if ((c >= '0') && (c <= '9'))
+		return (1);
+	return (0);
+}
+
 char	*ft_strcapitalize(char *str)
 {
-	int c;
-	int i;
+	int	i;
 
-	c = 0;
 	i = 0;
-	while (str[c] != '\0')
+	while (str[i])
 	{
-		if (i == 0 && (str[c] >= 'a' && str[c] <= 'z'))
+		while (str[i] && !is_alpha(str[i]))
+			i++;
+		if (str[i] && ((str[i] >= 'a') && (str[i] <= 'z')))
+			str[i] -= 32;
+		i++;
+		while (str[i] && is_alpha(str[i]))
 		{
-			str[c] -= 'a' - 'A';
+			if ((str[i] >= 'A') && (str[i] <= 'Z'))
+				str[i] += 32;
 			i++;
 		}
-		else if (i > 0 && (str[c] >= 'A' && str[c] <= 'Z'))
-			str[c] += 'a' - 'A';
-		else if ((str[c] < '0') || (str[c] > '9' && str[c] < 'A')
-				|| (str[c] > 'Z' && str[c] < 'a') || (str[c] > 'z'))
-			i = 0;
-		else
-			i++;
-		c++;
 	}
 	return (str);
 }

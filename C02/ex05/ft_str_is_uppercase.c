@@ -5,21 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckarakus <ckarakus@student.42istanbul.com  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/21 01:56:20 by ckarakus          #+#    #+#             */
-/*   Updated: 2022/11/21 01:56:22 by ckarakus         ###   ########.fr       */
+/*   Created: 2022/10/19 07:59:40 by ckarakus          #+#    #+#             */
+/*   Updated: 2022/10/19 07:59:42 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_str_is_uppercase(char *str)
-{
-	int c;
+#include <unistd.h>
 
-	c = 0;
-	while (str[c] != '\0')
+int	ft_str_is_uppercase(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
 	{
-		if ((str[c] < 'A') || (str[c] > 'Z'))
+		if (!(str[i] >= 'A' && str[i] <= 'Z'))
 			return (0);
-		c++;
+		i++;
 	}
 	return (1);
 }

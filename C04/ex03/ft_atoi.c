@@ -5,32 +5,36 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckarakus <ckarakus@student.42istanbul.com  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/21 02:02:31 by ckarakus          #+#    #+#             */
-/*   Updated: 2022/11/21 02:02:33 by ckarakus         ###   ########.fr       */
+/*   Created: 2022/10/24 13:08:35 by ckarakus          #+#    #+#             */
+/*   Updated: 2022/10/24 13:08:37 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_atoi(char *str)
-{
-	int c;
-	int s;
-	int res;
+#include <unistd.h>
 
-	c = 0;
-	s = 1;
+int	ft_atoi(char *str)
+{
+	int	i;
+	int	res;
+	int	sign;
+
+	i = 0;
 	res = 0;
-	while ((str[c] >= '\t' && str[c] <= '\r') || str[c] == ' ')
-		c++;
-	while (str[c] == '+' || str[c] == '-')
+	sign = 1;
+	while ((str[i] >= 9 && str[i] <= 13) || str[i] == ' ')
+		i++;
+	while ((str[i] == '-' || str[i] == '+'))
 	{
-		if (str[c] == '-')
-			s *= -1;
-		c++;
+		if (str[i] == '-')
+			sign *= -1;
+		i++;
 	}
-	while (str[c] >= '0' && str[c] <= '9')
+	while (str[i] >= '0' && str[i] <= '9')
 	{
-		res = (str[c] - '0') + (res * 10);
-		c++;
+		res *= 10;
+		res += str[i] - 48;
+		i++;
 	}
-	return (res * s);
+	res *= sign;
+	return (res);
 }

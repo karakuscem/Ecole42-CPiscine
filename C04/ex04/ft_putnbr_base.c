@@ -5,63 +5,74 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckarakus <ckarakus@student.42istanbul.com  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/21 02:03:22 by ckarakus          #+#    #+#             */
-/*   Updated: 2022/11/21 02:03:28 by ckarakus         ###   ########.fr       */
+/*   Created: 2022/10/24 23:05:16 by ckarakus          #+#    #+#             */
+/*   Updated: 2022/10/25 02:01:49 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void		ft_putchar(char c)
+#include <unistd.h>
+
+void	ft_putchar(char c)
 {
 	write(1, &c, 1);
 }
 
-static int	ft_check_base(char *base)
+int	check_errors(char *base)
 {
 	int	i;
-	int	z;
+	int	j;
 
 	i = 0;
-	if (!base || !base[1])
+	j = 0;
+	if (base[0] == '\0' || base[1] == '\0')
 		return (0);
 	while (base[i])
 	{
-		if (!((base[i] >= '0' && base[i] <= '9') || (base[i] >= 'a' \
-				&& base[i] <= 'z') || (base[i] >= 'A' && base[i] <= 'Z')))
+		j = i + 1;
+		if (base[i] == '+' || base[i] == '-')
 			return (0);
-		z = i + 1;
-		while (base[z])
+		if (base[i] < 32 || base[i] > 126)
+			return (0);
+		while (base[j])
 		{
-			if (base[i] == base[z])
+			if (base[i] == base[j])
 				return (0);
-			z++;
+			j++;
 		}
 		i++;
 	}
+	return (1);
+}
+
+int	ft_strlen(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+		i++;
 	return (i);
 }
 
-void		ft_putnbr_base(int nbr, char *base)
+void	ft_putnbr_base(int nbr, char *base)
 {
-	int		i;
-	int		base_type;
-	int		n[16];
+	int	size;
 
-	i = 0;
-	if ((base_type = ft_check_base(base)))
+	size = 0;
+	if (check_errors(base))
 	{
+		size = ft_strlen(base);
 		if (nbr < 0)
 		{
 			nbr = -nbr;
 			ft_putchar('-');
 		}
-		while (nbr)
+		if (nbr > size)
 		{
-			n[i] = nbr % base_type;
-			nbr /= base_type;
-			i++;
+			ft_putnbr_base(nbr / size, base);
+			ft_putnbr_base(nbr % size, base);
 		}
-		while (i > 0)
-			ft_putchar(base[n[--i]]);
+		if (nbr < size)
+			ft_putchar(nbr + '0');
 	}
-	
 }

@@ -5,16 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckarakus <ckarakus@student.42istanbul.com  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/21 02:02:23 by ckarakus          #+#    #+#             */
-/*   Updated: 2022/11/21 02:02:24 by ckarakus         ###   ########.fr       */
+/*   Created: 2022/10/24 02:45:02 by ckarakus          #+#    #+#             */
+/*   Updated: 2022/10/24 02:45:14 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char a)
+void	ft_putchar(char c)
 {
-	write(1, &a, 1);
+	write(1, &c, 1);
 }
 
 void	ft_putnbr(int nb)
@@ -23,19 +23,19 @@ void	ft_putnbr(int nb)
 	{
 		ft_putchar('-');
 		ft_putchar('2');
-		nb = 147483648;
+		ft_putnbr(147483648);
 	}
-	if (nb < 0)
+	else if (nb < 0)
 	{
 		ft_putchar('-');
-		nb *= -1;
+		nb = -nb;
+		ft_putnbr(nb);
 	}
-	if (nb < 10)
+	else if (nb > 9)
 	{
-		ft_putchar(nb + 48);
-		return ;
+		ft_putnbr(nb / 10);
+		ft_putnbr(nb % 10);
 	}
 	else
-		ft_putnbr(nb / 10);
-	ft_putnbr(nb % 10);
+		ft_putchar(nb + 48);
 }

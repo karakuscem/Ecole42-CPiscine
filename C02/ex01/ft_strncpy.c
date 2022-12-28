@@ -5,25 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckarakus <ckarakus@student.42istanbul.com  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/21 01:55:29 by ckarakus          #+#    #+#             */
-/*   Updated: 2022/11/21 01:55:33 by ckarakus         ###   ########.fr       */
+/*   Created: 2022/10/19 07:25:38 by ckarakus          #+#    #+#             */
+/*   Updated: 2022/10/19 07:25:41 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
+
 char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	unsigned int c;
+	unsigned int	i;
 
-	c = 0;
-	while ((src[c] != '\0') && (c < n))
+	i = 0;
+	while (src[i] && i < n)
 	{
-		dest[c] = src[c];
-		c++;
+		dest[i] = src[i];
+		i++;
 	}
-	while (c < n)
+	while (i < n)
 	{
-		dest[c] = '\0';
-		c++;
+		dest[i] = '\0';
+		i++;
 	}
 	return (dest);
 }

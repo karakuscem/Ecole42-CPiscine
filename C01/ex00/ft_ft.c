@@ -5,10 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckarakus <ckarakus@student.42istanbul.com  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/21 01:31:31 by ckarakus          #+#    #+#             */
-/*   Updated: 2022/11/21 01:31:32 by ckarakus         ###   ########.fr       */
+/*   Created: 2022/10/14 05:19:31 by ckarakus          #+#    #+#             */
+/*   Updated: 2022/10/16 18:35:12 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <unistd.h>
 
 void	ft_ft(int *nbr)
 {

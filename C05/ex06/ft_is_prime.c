@@ -5,23 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckarakus <ckarakus@student.42istanbul.com  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/21 02:06:08 by ckarakus          #+#    #+#             */
-/*   Updated: 2022/11/21 02:06:09 by ckarakus         ###   ########.fr       */
+/*   Created: 2022/10/26 23:30:38 by ckarakus          #+#    #+#             */
+/*   Updated: 2022/10/28 15:30:15 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_is_prime(int nb)
+int	ft_is_prime(int nb)
 {
-	int n;
+	int	i;
 
-	n = 2;
-	if (nb < 2)
+	i = 2;
+	if (nb <= 1)
 		return (0);
-	while (n <= nb / 2)
+	while (i <= (nb / 2))
 	{
-		if (nb % n == 0)
+		if (!(nb % i))
 			return (0);
-		n++;
+		else
+			i += 1;
 	}
 	return (1);
 }

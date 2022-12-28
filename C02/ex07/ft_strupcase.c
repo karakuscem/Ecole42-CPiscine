@@ -5,21 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckarakus <ckarakus@student.42istanbul.com  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/21 01:56:35 by ckarakus          #+#    #+#             */
-/*   Updated: 2022/11/21 01:56:36 by ckarakus         ###   ########.fr       */
+/*   Created: 2022/10/19 08:16:52 by ckarakus          #+#    #+#             */
+/*   Updated: 2022/10/19 08:16:54 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
+
 char	*ft_strupcase(char *str)
 {
-	int c;
+	int	i;
 
-	c = 0;
-	while (str[c] != '\0')
+	i = 0;
+	while (str[i])
 	{
-		if ((str[c] >= 'a') && (str[c] <= 'z'))
-			str[c] -= 'a' - 'A';
-		c++;
+		if (str[i] >= 'a' && str[i] <= 'z')
+			str[i] = ((str[i] - 'a') + 'A');
+		i++;
 	}
 	return (str);
 }

@@ -5,10 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckarakus <ckarakus@student.42istanbul.com  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/21 02:00:03 by ckarakus          #+#    #+#             */
-/*   Updated: 2022/11/21 02:00:05 by ckarakus         ###   ########.fr       */
+/*   Created: 2022/10/22 00:27:49 by ckarakus          #+#    #+#             */
+/*   Updated: 2022/10/22 00:28:08 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <unistd.h>
 
 char	*ft_strcat(char *dest, char *src)
 {

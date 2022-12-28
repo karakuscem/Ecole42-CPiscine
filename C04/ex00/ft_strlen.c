@@ -5,20 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckarakus <ckarakus@student.42istanbul.com  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/21 02:02:07 by ckarakus          #+#    #+#             */
-/*   Updated: 2022/11/21 02:02:08 by ckarakus         ###   ########.fr       */
+/*   Created: 2022/10/24 02:41:12 by ckarakus          #+#    #+#             */
+/*   Updated: 2022/10/24 02:41:53 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strlen(char *str)
+int	ft_strlen(char *str)
 {
-	int counter;
+	int	i;
 
-	counter = 0;
-	while (*str != '\0')
-	{
-		counter++;
-		str++;
-	}
-	return (counter);
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
 }

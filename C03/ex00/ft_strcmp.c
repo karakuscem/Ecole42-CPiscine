@@ -5,17 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckarakus <ckarakus@student.42istanbul.com  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/21 01:58:01 by ckarakus          #+#    #+#             */
-/*   Updated: 2022/11/21 01:58:04 by ckarakus         ###   ########.fr       */
+/*   Created: 2022/10/21 23:05:51 by ckarakus          #+#    #+#             */
+/*   Updated: 2022/10/23 16:42:07 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strcmp(char *s1, char *s2)
-{
-	int c;
+#include <unistd.h>
 
-	c = 0;
-	while ((s1[c] == s2[c]) && (s1[c] != '\0') && (s2[c] != '\0'))
-		c++;
-	return (s1[c] - s2[c]);
+int	ft_strcmp(char *s1, char *s2)
+{
+	unsigned int	i;
+
+	i = 0;
+	while (s1[i] && (s1[i] == s2[i]))
+		i++;
+	return (s1[i] - s2[i]);
 }

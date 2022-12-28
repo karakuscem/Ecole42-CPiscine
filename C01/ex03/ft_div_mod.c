@@ -5,16 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckarakus <ckarakus@student.42istanbul.com  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/21 01:32:28 by ckarakus          #+#    #+#             */
-/*   Updated: 2022/11/21 01:32:30 by ckarakus         ###   ########.fr       */
+/*   Created: 2022/10/14 05:30:08 by ckarakus          #+#    #+#             */
+/*   Updated: 2022/10/14 05:30:10 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
+
 void	ft_div_mod(int a, int b, int *div, int *mod)
 {
-	if (b != 0)
-	{
-		*div = a / b;
-		*mod = a % b;
-	}
+	*div = a / b;
+	*mod = a % b;
 }
