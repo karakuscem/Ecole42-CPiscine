@@ -32,7 +32,7 @@ Bu repoda veya başka bir repoda projelerin cevaplarına ulaşmak mümkün, anca
 
 ## Results - Sonuçlar
 
-![C00](https://github.com/karakuscem/Ecole42-CPiscine.git/blob/main/sources/C00.jpg?raw=true)
+![C00](https://github.com/karakuscem/Ecole42-CPiscine/blob/main/sources/C00.png)
 
 ## Got questions ? Do reach - Soruların mı var ? Ulaş
 
