@@ -32,7 +32,14 @@ Bu repoda veya başka bir repoda projelerin cevaplarına ulaşmak mümkün, anca
 
 ## Results - Sonuçlar
 
+![SHELL00](https://github.com/karakuscem/Ecole42-CPiscine/blob/main/sources/SHELL00.png)
 ![C00](https://github.com/karakuscem/Ecole42-CPiscine/blob/main/sources/C00.png)
+![C01](https://github.com/karakuscem/Ecole42-CPiscine/blob/main/sources/C01.png)
+![C02](https://github.com/karakuscem/Ecole42-CPiscine/blob/main/sources/C02.png)
+![C03](https://github.com/karakuscem/Ecole42-CPiscine/blob/main/sources/C03.png)
+![C04](https://github.com/karakuscem/Ecole42-CPiscine/blob/main/sources/C04.png)
+![C05](https://github.com/karakuscem/Ecole42-CPiscine/blob/main/sources/C05.png)
+![C06](https://github.com/karakuscem/Ecole42-CPiscine/blob/main/sources/C06.png)
 
 ## Got questions ? Do reach - Soruların mı var ? Ulaş
 
